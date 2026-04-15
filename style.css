@@ -165,7 +165,6 @@ body {
 
 /* Ajuste na imagem do card */
 .card-custom img {
-    height: 180px;
     object-fit: cover;
     transition: 0.5s;
 }
