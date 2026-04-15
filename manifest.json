@@ -1,0 +1,16 @@
+{
+  "name": "Rádio Adventus Oficial",
+  "short_name": "Adventus",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#003366",
+  "theme_color": "#f39200",
+  "icons": [
+    {
+      "src": "https://radioadventus.org/wp-content/uploads/2023/04/Logo-Radio-Adventus-Site-1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

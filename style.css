@@ -1,0 +1,258 @@
+:root {
+    --azul-escuro: #003366;
+    --laranja: #f39200;
+    --fundo: #f8f9fa;
+    --branco: #ffffff;
+}
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: var(--fundo);
+    color: var(--azul-escuro);
+    padding-bottom: 110px;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar-adventus {
+    background: var(--branco);
+    border-bottom: 3px solid var(--laranja);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.nav-link-custom {
+    font-weight: 700; 
+    color: var(--azul-escuro);
+    padding: 10px 15px; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    font-size: 0.85rem;
+}
+
+.nav-link-custom:hover { 
+    color: var(--laranja); 
+}
+
+/* Banner/Swiper */
+.swiper-hero { 
+    border-radius: 25px; 
+    margin-bottom: 30px; 
+}
+
+.slide-item {
+    height: 350px; 
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    align-items: center; 
+    border-radius: 25px;
+}
+
+.slide-overlay {
+    background: linear-gradient(90deg, rgba(0,51,102,0.9) 0%, transparent 100%);
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    padding: 50px; 
+    color: white; 
+    border-radius: 25px;
+}
+
+/* Cards */
+.card-custom {
+    border: none; 
+    border-radius: 20px; 
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    transition: 0.3s;
+}
+
+.card-custom:hover { 
+    transform: translateY(-5px); 
+}
+
+/* Player Bar */
+.player-bar {
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%;
+    background: white; 
+    padding: 15px 0; 
+    z-index: 2000;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+}
+
+.play-btn {
+    width: 55px; 
+    height: 55px; 
+    background: var(--laranja);
+    border: none; 
+    border-radius: 50%; 
+    color: white;
+    font-size: 26px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.play-btn:active {
+    transform: scale(0.9);
+}
+
+.prog-badge { 
+    font-size: 0.7rem; 
+    letter-spacing: 1px; 
+}
+
+/* Animação de entrada suave */
+.animate__animated {
+    animation-duration: 0.6s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate__fadeIn { animation-name: fadeIn; }
+
+/* Borda pontilhada para o PIX */
+.border-dashed {
+    border: 2px dashed #dee2e6;
+}
+
+/* Efeito de hover nos itens da lista de podcast */
+.list-group-item:hover {
+    background-color: #f1f8ff;
+    transition: 0.2s;
+}
+
+/* Cores Adicionais */
+.border-laranja { border-color: var(--laranja) !important; }
+.bg-azul-escuro { background-color: var(--azul-escuro) !important; color: white; }
+
+
+/* Efeito de Overlay no Vídeo */
+.position-relative { position: relative; }
+
+.play-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 51, 102, 0.4); /* Azul escuro semi-transparente */
+    opacity: 0;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.card-custom:hover .play-overlay {
+    opacity: 1;
+}
+
+/* Cortar títulos muito longos em 2 linhas */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+/* Ajuste na imagem do card */
+.card-custom img {
+    height: 180px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-custom:hover img {
+    transform: scale(1.1);
+}
+
+/* estilo para o botão de notificação e um efeito de pulso para quando estiver "ativo" */
+.btn-notify {
+    border: none;
+    background: transparent;
+    color: var(--azul-escuro);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.btn-notify.active {
+    color: var(--laranja);
+    animation: pulse-notify 2s infinite;
+}
+
+@keyframes pulse-notify {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.notification-badge {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+    display: none; /* Aparece via JS */
+}
+
+
+/* Variáveis para o Tema Escuro */
+[data-theme="dark"] {
+    --fundo: #121212;
+    --branco: #1e1e1e;
+    --azul-escuro: #e1e1e1; /* Invertemos para o texto ficar claro */
+    --texto-mutado: #b0b0b0;
+}
+
+/* Transição suave ao trocar de tema */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ajustes específicos para o Dark Mode */
+[data-theme="dark"] .card-custom {
+    background: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .player-bar {
+    background: #1e1e1e;
+    border-top: 1px solid #333;
+}
+
+[data-theme="dark"] .list-group-item {
+    background: #1e1e1e;
+    color: white;
+    border-color: #333;
+}
+
+/* Efeito de "Equalizador" Animado */
+.playing-animation {
+    display: none; /* Escondido por padrão */
+    align-items: flex-end;
+    gap: 2px;
+    height: 15px;
+}
+
+.playing-animation span {
+    background: var(--laranja);
+    width: 3px;
+    animation: bounce 0.5s infinite alternate;
+}
+
+[data-theme="dark"] .playing-animation span { background: #ffb84d; }
+
+@keyframes bounce {
+    from { height: 2px; }
+    to { height: 15px; }
+}
+
+/* Ativar quando o player estiver tocando */
+.is-playing .playing-animation { display: flex; }
