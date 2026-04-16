@@ -1,5 +1,5 @@
 // Configurações Globais
-const WHATSAPP_RADIO = "5511999999999"; 
+const WHATSAPP_RADIO = "+244923896963"; 
 
 const gradeCompleta = [
     { nome: "Amanhecer com Deus", inicio: "05:00", fim: "05:30", logo: "assets/img/lgp-amanhecer-com-deus.png" },
@@ -151,6 +151,7 @@ function renderInicio(dados) {
                                 <div class="fw-bold mb-1">${dados.noAr.nome}</div>
                                 <p class="opacity-75 fw-bold mb-1">Horário: ${dados.noAr.inicio} - ${dados.noAr.fim}</p>
                                 <span class="badge bg-light text-dark p-1 me-1">93.9 FM</span>
+                                <small class="textmuted text-white">"A Sintonia da Esperança"</small>
                                 <p class="py-2 lead" style="font-size: 0.9rem;">Informações essenciais para um melhor estilo de vida e bem-estar.</p>      
                                 <button class="btn btn-warning fw-bold rounded-pill" onclick="toggleAudio()">
                                     <i class="bi bi-play-circle-fill me-1"></i> ESCUTAR AGORA
@@ -172,6 +173,7 @@ function renderInicio(dados) {
                         </div>
                     `).join('')}
                 </div>
+
             </div>
         </div>
     `;
@@ -509,7 +511,7 @@ function verificarDisparoNotificacao(titulo, hora) {
     setTimeout(() => {
         new Notification("Rádio Adventus - No Ar Agora!", {
             body: `Começou: ${titulo}. Sintonize na esperança!`,
-            icon: "https://radioadventus.org/wp-content/uploads/2023/04/Logo-Radio-Adventus-Site-1.png"
+            icon: "assets/img/logo-radioadventus.png"
         });
     }, 5000); // Notifica após 5 segundos para você ver funcionando
 }
