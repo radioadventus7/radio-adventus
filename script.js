@@ -45,41 +45,6 @@ function getProgramacaoAtualizada() {
     };
 }
 
-// Sistema de Rotas Simples
-/*function router(path) {
-    const app = document.getElementById('app');
-    const dados = getProgramacaoAtualizada();
-    window.scrollTo(0,0); // Volta ao topo ao mudar de página
-
-    switch(path) {
-        case 'inicio':
-            app.innerHTML = renderInicio(dados);
-            break;
-        case 'curso':
-            app.innerHTML = renderCurso();
-            break;
-        case 'sobre':
-            app.innerHTML = `<div class="card-custom p-5"><h2>Sobre a Rádio Adventus</h2><p class="lead">Uma emissora dedicada a levar a mensagem do terceiro anjo a todo o mundo.</p></div>`;
-            break;
-        case 'contato':
-            app.innerHTML = `<div class="card-custom p-5"><h2>Contato</h2><p>Ligue para nós ou envie uma mensagem no WhatsApp oficial.</p></div>`;
-            break;
-
-        case 'pedidos':
-            app.innerHTML = renderPedidosOração();
-            break;
-        case 'agenda':
-            app.innerHTML = renderAgenda();
-            break;
-        case 'apoio':
-            app.innerHTML = renderApoio();
-            break;
-        // ... os outros casos que já existiam
-    }
-    
-    document.getElementById('playerProgTitle').innerText = dados.noAr.nome;
-}*/
-
 // No seu script.js, mude o topo da função router para:
 async function router(path) {
     const app = document.getElementById('app');
