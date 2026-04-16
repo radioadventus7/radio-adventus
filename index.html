@@ -14,26 +14,36 @@
 </head>
 <body>
 
-    <nav class="navbar-adventus py-2">
-        <div class="container d-flex justify-content-between align-items-center">
-            <img src="assets/img/logo-radioadventus.png" 
-                 height="45" onclick="router('inicio')" style="cursor:pointer" alt="Logo">
+<nav class="navbar navbar-expand-lg navbar-adventus py-2">
+    <div class="container">
+        <a class="navbar-brand" href="#" onclick="router('inicio')">
+            <img src="assets/img/logo-radioadventus.png" height="45" alt="Logo">
+        </a>
+
+        <div class="d-flex align-items-center ms-auto me-2 order-lg-2">
             <button class="btn btn-link nav-link-custom border-0" onclick="toggleTheme()" id="themeBtn">
                 <i class="bi bi-moon-stars-fill"></i>
             </button>
-            <div class="d-none d-lg-flex">
-                <span class="nav-link-custom" onclick="router('inicio')">Início</span>
-                <span class="nav-link-custom" onclick="router('sobre')">Sobre</span>
-                <span class="nav-link-custom" onclick="router('curso')">Cursos Bíblicos</span>
-                <span class="nav-link-custom" onclick="router('pedidos')">Oração</span>
-                <span class="nav-link-custom" onclick="router('agenda')">Agenda</span>
-                <span class="nav-link-custom" onclick="router('podcast')">Podcasts</span>
-                <span class="nav-link-custom" onclick="router('apoio')">Apoiar</span>
-                <span class="nav-link-custom" onclick="router('contato')">Contato</span>
-            </div>
         </div>
 
-    </nav>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <i class="bi bi-list fs-1 text-azul-escuro" id="menuIcon"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto text-center">
+                <span class="nav-link nav-link-custom" onclick="router('inicio')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Início</span>
+                <span class="nav-link nav-link-custom" onclick="router('sobre')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Sobre</span>
+                <span class="nav-link nav-link-custom" onclick="router('curso')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Cursos</span>
+                <span class="nav-link nav-link-custom" onclick="router('pedidos')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Oração</span>
+                <span class="nav-link nav-link-custom" onclick="router('agenda')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Agenda</span>
+                <span class="nav-link nav-link-custom" onclick="router('podcast')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Podcasts</span>
+                <span class="nav-link nav-link-custom" onclick="router('apoio')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Apoiar</span>
+                <span class="nav-link nav-link-custom" onclick="router('contato')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contato</span>
+            </div>
+        </div>
+    </div>
+</nav>
 
     <main id="app" class="container mt-4">
     </main>
@@ -63,6 +73,8 @@
     <audio id="radioAudio" src="https://stream.zeno.fm/kxu1vjyliqguv"></audio>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>

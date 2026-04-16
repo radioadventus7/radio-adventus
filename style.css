@@ -76,6 +76,14 @@ body {
     transform: translateY(-5px); 
 }
 
+.mode-dark {
+    border: none;
+    border-radius: 20px;
+    background: #ffc107;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
 /* Player Bar */
 .player-bar {
     position: fixed; 
@@ -232,6 +240,123 @@ body {
     border-color: #333;
 }
 
+
+/* Cor personalizada para textos secundários que se adapta ao tema */
+.text-muted-custom {
+    color: #6c757d; /* Cor cinza no modo light */
+    transition: color 0.3s;
+}
+
+[data-theme="dark"] .text-muted-custom {
+    color: #b0b0b0 !important; /* Cinza claro no modo dark */
+}
+
+/* Garante que o ícone do menu hamburguer mude de cor no dark mode */
+[data-theme="dark"] #menuIcon {
+    color: white !important;
+}
+
+/* Forçar cores de títulos no Dark Mode */
+[data-theme="dark"] .text-azul-escuro, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h2,
+[data-theme="dark"] .fw-bold {
+    color: white !important;
+}
+
+/* Quando o data-theme for dark, aplicamos as cores nos seletores comuns */
+[data-theme="dark"], 
+[data-theme="dark"] body {
+    color: #ffffff !important; /* Força branco em textos gerais */
+}
+
+/* Alvos específicos que costumam resistir à mudança */
+[data-theme="dark"] p, 
+[data-theme="dark"] span, 
+[data-theme="dark"] small, 
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6,
+[data-theme="dark"] .nav-link-custom
+[data-theme="dark"] .btn:hover {
+    color: #ffffff !important;
+}
+
+/* Ajuste para o 'text-muted' do Bootstrap que é teimoso */
+[data-theme="dark"] .text-muted {
+    color: #bbbbbb !important; /* Um cinza bem clarinho para manter o contraste */
+}
+
+/* Seletor para os cards ficarem com texto branco */
+[data-theme="dark"] .card-custom * {
+    color: #ffffff;
+}
+
+/* Ajuste para o fundo claro no Modo Dark */
+[data-theme="dark"] .bg-light {
+    background-color: #2a2a2a !important; /* Um cinza levemente mais claro que o fundo geral */
+    color: #ffffff !important;
+}
+
+/* Forçar o texto dentro do bloco PIX/Badge a ficar legível */
+[data-theme="dark"] .bg-light .text-azul-escuro,
+[data-theme="dark"] .bg-light h4,
+[data-theme="dark"] .bg-light small {
+    color: var(--laranja) !important; /* Usar laranja para destaque no PIX no modo dark */
+}
+
+/* Corrigir o Badge especificamente */
+[data-theme="dark"] .badge.bg-light {
+    background-color: var(--laranja) !important;
+    color: #000000 !important; /* Texto preto no badge laranja para brilhar */
+}
+
+/* Ajuste para o botão "Copiar Chave" */
+[data-theme="dark"] .btn-link {
+    color: #5ab1ff !important; /* Um azul mais vivo para links no modo dark */
+}
+
+[data-theme="dark"] .bg-light h4 {
+    color: #003366 !important; /* Seu azul escuro original */
+}
+
+/* Placeholder visível no modo Dark */
+[data-theme="dark"] ::placeholder {
+    color: #a0a0a0 !important; /* Cinza claro para contraste */
+    opacity: 1; /* Garante que o navegador não diminua a opacidade */
+}
+
+/* Para navegadores específicos (Edge/Chrome/Safari) */
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: #a0a0a0 !important;
+}
+
+/* No modo Light, mantemos o padrão mas garantimos que não suma */
+::placeholder {
+    color: #6c757d;
+}
+
+/* Excessão: Garantir que botões mantenham suas cores originais */
+/** [data-theme="dark"] .btn-warning, [data-theme="dark"] .btn-warning * {
+    color: #212529; 
+} /* Texto escuro no botão amarelo para legibilidade */
+
+/* Ajuste fino para evitar rolagem lateral */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 /* Efeito de "Equalizador" Animado */
 .playing-animation {
     display: none; /* Escondido por padrão */
@@ -255,3 +380,237 @@ body {
 
 /* Ativar quando o player estiver tocando */
 .is-playing .playing-animation { display: flex; }
+
+/* garantir que a imagem mude de forma suave e o formulário fique bem organizado no celular */
+/* Efeito de transição da capa */
+#imgCurso {
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Linha divisória apenas em telas grandes */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #dee2e6;
+    }
+}
+
+/* Estilo para labels no dark mode */
+[data-theme="dark"] label {
+    color: #ffffff !important;
+}
+
+/* Ajuste no seletor para combinar com o tema */
+.form-select, .form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+}
+
+[data-theme="dark"] .form-select, 
+[data-theme="dark"] .form-control {
+    background-color: #333;
+    border-color: #444;
+    color: white;
+}
+
+
+
+/* Bordas coloridas no topo dos cards de apoio para diferenciar */
+.border-warning { border-top-color: #ffc107 !important; }
+.border-primary { border-top-color: #007bff !important; }
+.border-secondary { border-top-color: #6c757d !important; }
+
+/* Estilo para input group (Kwanza Kz) */
+.input-group-text {
+    background-color: var(--azul-escuro);
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+/* Background suave para a doação anônima */
+.bg-light-subtle {
+    background-color: rgba(0,0,0,0.03);
+}
+
+[data-theme="dark"] .bg-light-subtle {
+    background-color: rgba(255,255,255,0.05);
+}
+
+
+/* Paleta de Cores e Bordas */
+.border-top-laranja {
+    border-top: 5px solid #f39200 !important;
+}
+
+.bg-laranja {
+    background-color: #f39200 !important;
+}
+
+.bg-laranja-light {
+    background-color: rgba(243, 146, 0, 0.1);
+}
+
+.text-warning {
+    color: #f39200 !important;
+}
+
+/* Customização dos Inputs */
+.custom-input {
+    background-color: #f8f9fa;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+[data-theme="dark"] .custom-input {
+    background-color: #252525;
+    border-color: #333;
+    color: white;
+}
+
+.custom-input:focus {
+    border-color: #f39200;
+    box-shadow: none;
+    background-color: #fff;
+}
+
+/* Botão Azul Escuro Real */
+.btn-azul-escuro {
+    background-color: #003366 !important;
+    color: white !important;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.btn-azul-escuro:hover {
+    background-color: #002244 !important;
+    border-color: #f39200;
+}
+
+/* Card Escuro Interno */
+.bg-dark-card {
+    background-color: #001a33;
+}
+
+[data-theme="dark"] .bg-dark-card {
+    background-color: #0a0a0a;
+}
+
+/* Círculo de Ícone */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.8rem;
+}
+
+/* Rodapé com Gradiente */
+.bg-azul-escuro-gradient {
+    background: linear-gradient(135deg, #003366 0%, #001a33 100%);
+    border: 1px solid rgba(243, 146, 0, 0.3);
+}
+
+/* Estilo das caixas de bancos */
+.bank-card {
+    border: 1px solid rgba(243, 146, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.bank-card:hover {
+    transform: scale(1.02);
+    border-color: #f39200;
+}
+
+.bg-dark-card {
+    background-color: #001a33 !important; /* Azul Escuro Profundo */
+}
+
+[data-theme="dark"] .bg-dark-card {
+    background-color: #0a0a0a !important; /* Preto no Dark Mode */
+}
+
+/* Bordas e Cores */
+.border-top-laranja {
+    border-top: 6px solid #f39200 !important;
+}
+
+.bg-laranja {
+    background-color: #f39200 !important;
+}
+
+.text-warning {
+    color: #f39200 !important;
+}
+
+/* Customização de Inputs */
+.custom-input {
+    border-radius: 12px;
+    padding: 12px;
+}
+
+[data-theme="dark"] .custom-input {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+}
+
+
+.bg-azul-escuro-gradient {
+    background: linear-gradient(135deg, #001a33 0%, #003366 100%);
+    border: 1px solid rgba(243, 146, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.italic {
+    font-style: italic;
+}
+
+filter-white {
+    filter: brightness(0) invert(1);
+}
+
+/* Ícone de mãos em oração ou intercessão */
+.bi-hands {
+    color: #f39200;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Espaçamento extra para o formulário no mobile */
+@media (max-width: 768px) {
+    .card-custom.p-md-5 {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Efeito de Hover no Card de Podcast */
+.group:hover .group-hover-opacity-100 {
+    opacity: 1 !important;
+}
+
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Agenda Data Highlight */
+.bg-azul-escuro {
+    background-color: #003366 !important;
+}
+
+/* Border Dashed para o alerta */
+.border-dashed {
+    border: 2px dashed #ccc !important;
+}
+
+/* Responsividade para a agenda no mobile */
+@media (max-width: 576px) {
+    .bg-azul-escuro.p-4 {
+        padding: 1.5rem !important;
+        min-width: 80px !important;
+    }
+    .display-6 {
+        font-size: 1.5rem;
+    }
+}
