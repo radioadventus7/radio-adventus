@@ -151,32 +151,6 @@ function renderInicio(dados) {
 
         <div class="hero-program mb-5">
 
-        <div class="container animate__animated animate__fadeIn mb-5">
-            <div class="row g-4"> 
-                <div class="col-12 col-lg-6">
-                    <div class="card-custom p-4 h-100">
-                        <span class="badge bg-danger mb-2">NO AR AGORA</span>
-                        <h2 class="fw-bold">${dados.noAr.nome}</h2>
-                        <img src="${dados.noAr.logo}" class="mt-3 p-2 img-fluid" onerror="this.src='https://via.placeholder.com/150'">
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-6">
-                    <h4 class="fw-bold mb-3">A Seguir</h4>
-                    <div class="d-flex flex-column gap-2"> ${dados.proximos.map(p => `
-                            <div class="card-custom p-3 d-flex align-items-center">
-                                <img src="${p.logo}" width="150" height="60" class="rounded me-3 flex-shrink-0">
-                                <div class="overflow-hidden">
-                                    <div class="fw-bold text-truncate">${p.nome}</div>
-                                    <small class="text-muted">${p.inicio} às ${p.fim}</small>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
         <div class="row g-4">
             <div class="col-md-6">
