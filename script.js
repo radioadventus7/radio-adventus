@@ -106,7 +106,7 @@ function renderInicio(dados) {
                 <div class="swiper-slide">
                     <div class="slide-item" style="background-image: url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200')">
                         <div class="slide-overlay">
-                            <h1 class="display-5 fw-800">Sintonize na Esperança</h1>
+                            <h1 class="display-5 fw-800">Sintonize 93.9 FM</h1>
                             <p>As melhores mensagens e louvores para o seu dia.</p>
                         </div>
                     </div>
