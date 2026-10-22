@@ -18,7 +18,8 @@ const gradeCompleta = [
     { nome: "Entre Mulheres", inicio: "15:00", fim: "16:00", logo: "assets/img/lgp-entre-mulheres-adventus.png" },
     { nome: "Conversas Cruciais", inicio: "16:00", fim: "17:00", logo: "assets/img/lgp-conversas-crucias-adventus.png" },
     { nome: "Mensagem de Esperança", inicio: "17:00", fim: "18:00", logo: "assets/img/lgp-Mensagem-de-esperanca.png" },
-    { nome: "De Regresso a Casa", inicio: "18:00", fim: "19:30", logo: "assets/img/regresso-logo.png" }
+    { nome: "De Regresso a Casa", inicio: "18:00", fim: "19:30", logo: "assets/img/regresso-logo.png" },
+    { nome: "Sem Tabu", inicio: "22:00", fim: "23:00", logo: "assets/img/lgp-semtabu-logo.png" },
 ];
 
 const audio = document.getElementById('radioAudio');
@@ -115,7 +116,6 @@ function renderInicio(dados) {
         </div>
 
         <div class="hero-program mb-5">
-
 
         <div class="row g-4">
             <div class="col-md-6">
@@ -1250,7 +1250,6 @@ function showToast(mensagem) {
     // Você pode usar o Toast do Bootstrap ou um alert simples
     alert(mensagem); 
 }
-
 
 function toggleTheme() {
     const html = document.documentElement;
